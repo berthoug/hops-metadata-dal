@@ -29,7 +29,9 @@ public interface StorageConnector<T> {
   public void beginTransaction() throws StorageException;
 
   public void commit() throws StorageException;
-
+  
+  public void flush() throws StorageException;
+  
   public void rollback() throws StorageException;
 
   public boolean formatStorageNonTransactional() throws StorageException;

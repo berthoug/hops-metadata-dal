@@ -18,7 +18,7 @@ package io.hops.metadata.yarn.entity;
 /**
  * HOP representation of ContainerStatus yarn object.
  */
-public class ContainerStatus {
+public class ContainerStatus implements Comparable<ContainerStatus>{
 
   private final String containerid;
   private final String state;
@@ -60,6 +60,33 @@ public class ContainerStatus {
     return "HopContainerStatus{" + "containerid=" + containerid + ", state=" +
         state + ", diagnostics=" + diagnostics + ", exitstatus=" + exitstatus +
         '}';
+  }
+  
+  @Override
+  public int hashCode() {
+    return containerid.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (!(o instanceof ContainerStatus)) {
+      return false;
+    }
+
+    return containerid
+        .equals(((ContainerStatus) o).getContainerid());
+  }
+
+  @Override
+  public int compareTo(ContainerStatus other) {
+    if (this.equals(other)) {
+      return 0;
+    }
+    return containerid.compareTo(other.getContainerid());
+    
   }
 
 }

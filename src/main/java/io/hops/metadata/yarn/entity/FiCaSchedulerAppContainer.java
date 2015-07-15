@@ -15,11 +15,11 @@
  */
 package io.hops.metadata.yarn.entity;
 
-public class FiCaSchedulerAppLiveContainers {
+public class FiCaSchedulerAppContainer {
   private final String schedulerapp_id;
   private final String rmcontainer_id;
 
-  public FiCaSchedulerAppLiveContainers(String schedulerapp_id,
+  public FiCaSchedulerAppContainer(String schedulerapp_id,
       String rmcontainer_id) {
     this.schedulerapp_id = schedulerapp_id;
     this.rmcontainer_id = rmcontainer_id;

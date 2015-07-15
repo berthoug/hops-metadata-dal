@@ -324,7 +324,7 @@ public class TablesDef {
   public static interface RPCTableDef {
 
     public static final String TABLE_NAME = "yarn_appmaster_rpc";
-    public static final String ID = "id";
+    public static final String RPCID = "rpcid";
     public static final String TYPE = "type";
     public static final String RPC = "rpc";
     public static final String USERID = "userid";
@@ -464,7 +464,21 @@ public class TablesDef {
     public static final String NAME = "appname";
     public static final String SMSTATE = "appsmstate";
   }
+  
+  public static interface UpdatedNodeTableDef {
 
+    public static final String TABLE_NAME = "yarn_updated_node";
+    public static final String APPLICATIONID = "applicationid";
+    public static final String NODEID = "nodeid";
+  }
+
+  public static interface RanNodeTableDef {
+
+    public static final String TABLE_NAME = "yarn_ran_node";
+    public static final String APPLICATIONATTEMPTID = "application_attempt_id";
+    public static final String NODEID = "nodeid";
+  }
+    
   public static interface DelegationKeyTableDef {
     public static final String TABLE_NAME = "yarn_delegation_key";
     public static final String KEY = "key";
