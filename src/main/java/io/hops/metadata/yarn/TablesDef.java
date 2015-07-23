@@ -158,14 +158,16 @@ public class TablesDef {
     public static final String ID = "id";
 
     //Event Type
-    public static final byte NODE_ADDED = 1;
-    public static final byte NODE_REMOVED = 2;
-    public static final byte NODE_UPDATED = 3;
+    public static final int NODE_ADDED = 1;
+    public static final int NODE_REMOVED = 2;
+    public static final int NODE_UPDATED = 3;
 
     //Event status
-    public static final byte NEW = 1;
-    public static final byte PENDING = 2;
-    public static final byte COMPLETED = 3;
+    public static final int NEW = 1;
+    public static final int PENDING = 2;
+    public static final int COMPLETED = 3;
+    public static final int SCHEDULER_FINISHED_PROCESSING = 4;
+    public static final int SCHEDULER_NOT_FINISHED_PROCESSING = 5;
 
     //Event transactionstate action
     public static final int PERSISTEDEVENT_ADD = 1;

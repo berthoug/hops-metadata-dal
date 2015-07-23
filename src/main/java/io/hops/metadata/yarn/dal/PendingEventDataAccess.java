@@ -43,7 +43,7 @@ public interface PendingEventDataAccess<T> extends EntityDataAccess {
    * @return
    * @throws StorageException
    */
-  List<T> getAll(byte status) throws StorageException;
+  List<T> getAll(int status) throws StorageException;
 
   /**
    * @param pendingEvent
