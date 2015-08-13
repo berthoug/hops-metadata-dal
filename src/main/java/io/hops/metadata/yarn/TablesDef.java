@@ -444,6 +444,12 @@ public class TablesDef {
     public static final String ALLOCATERESPONSE = "allocate_response";
   }
 
+  public static interface AllocatedContainersTableDef {
+    public static final String TABLE_NAME = "yarn_allocated_containers";
+    public static final String APPLICATIONATTEMPTID = "applicationattemptid";
+    public static final String CONTAINERID = "containerid";
+  }
+   
   public static interface ApplicationAttemptStateTableDef {
     public static final String TABLE_NAME = "yarn_applicationattemptstate";
     public static final String APPLICATIONID = "applicationid";

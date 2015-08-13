@@ -15,19 +15,31 @@
  */
 package io.hops.metadata.yarn.entity.rmstatestore;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AllocateResponse {
 
   private final String applicationattemptid;
   private final byte[] allocateResponse;
-
+  private final List<String> allocatedContainers;
   public AllocateResponse(String applicationattemptid,
-      byte[] allocateResponse) {
+      byte[] allocateResponse, List<String> allocatedContainers) {
     this.applicationattemptid = applicationattemptid;
     this.allocateResponse = allocateResponse;
+    if(allocatedContainers!=null){
+      this.allocatedContainers = allocatedContainers;
+    }else{
+      this.allocatedContainers = new ArrayList<String>();
+    }
   }
 
+  public AllocateResponse(String applicationattemptid,  byte[] allocateResponse) {
+    this(applicationattemptid, allocateResponse, null);
+  }
+    
   public AllocateResponse(String applicationattemptid) {
-    this(applicationattemptid, null);
+    this(applicationattemptid, null, null);
   }
   
   public String getApplicationattemptid() {
@@ -37,5 +49,8 @@ public class AllocateResponse {
   public byte[] getAllocateResponse() {
     return allocateResponse;
   }
-  
+
+  public List<String> getAllocatedContainers() {
+    return allocatedContainers;
+  }
 }
