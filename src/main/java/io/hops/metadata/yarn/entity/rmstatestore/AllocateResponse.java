@@ -23,23 +23,27 @@ public class AllocateResponse {
   private final String applicationattemptid;
   private final byte[] allocateResponse;
   private final List<String> allocatedContainers;
+  private final List<byte[]> allocatedNMTokens;
   public AllocateResponse(String applicationattemptid,
-      byte[] allocateResponse, List<String> allocatedContainers) {
+      byte[] allocateResponse, List<String> allocatedContainers,
+      List<byte[]> allocatedNMTokens) {
     this.applicationattemptid = applicationattemptid;
     this.allocateResponse = allocateResponse;
     if(allocatedContainers!=null){
       this.allocatedContainers = allocatedContainers;
+      this.allocatedNMTokens = allocatedNMTokens;
     }else{
       this.allocatedContainers = new ArrayList<String>();
+      this.allocatedNMTokens = new ArrayList<byte[]>();
     }
   }
 
   public AllocateResponse(String applicationattemptid,  byte[] allocateResponse) {
-    this(applicationattemptid, allocateResponse, null);
+    this(applicationattemptid, allocateResponse, null, null);
   }
     
   public AllocateResponse(String applicationattemptid) {
-    this(applicationattemptid, null, null);
+    this(applicationattemptid, null, null, null);
   }
   
   public String getApplicationattemptid() {
@@ -52,5 +56,9 @@ public class AllocateResponse {
 
   public List<String> getAllocatedContainers() {
     return allocatedContainers;
+  }
+
+  public List<byte[]> getAllocatedNMTokens() {
+    return allocatedNMTokens;
   }
 }
