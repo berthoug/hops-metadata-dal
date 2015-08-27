@@ -20,26 +20,32 @@ package io.hops.metadata.yarn.entity;
  */
 public class FinishedApplications {
 
-  private final String rmnodeid;
-  private final String applicationId;
+    private final String rmnodeid;
+    private final String applicationId;
+    private final int pendingEventId;
 
-  public FinishedApplications(String rmnodeid, String applicationId) {
-    this.rmnodeid = rmnodeid;
-    this.applicationId = applicationId;
-  }
+    public FinishedApplications(String rmnodeid, String applicationId, int pendingId) {
+        this.rmnodeid = rmnodeid;
+        this.applicationId = applicationId;
+        this.pendingEventId = pendingId;
+    }
 
-  public String getRMNodeID() {
-    return rmnodeid;
-  }
+    public String getRMNodeID() {
+        return rmnodeid;
+    }
 
-  public String getApplicationId() {
-    return applicationId;
-  }
+    public int getPendingEventId() {
+        return pendingEventId;
+    }
 
-  @Override
-  public String toString() {
-    return "HopFinishedApplications{" + "rmnodeid=" + rmnodeid +
-        ", applicationId=" + applicationId + '}';
-  }
+    public String getApplicationId() {
+        return applicationId;
+    }
+
+    @Override
+    public String toString() {
+        return "HopFinishedApplications{" + "rmnodeid=" + rmnodeid
+                + ", applicationId=" + applicationId + '}';
+    }
 
 }

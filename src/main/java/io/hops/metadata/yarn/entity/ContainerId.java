@@ -21,26 +21,32 @@ package io.hops.metadata.yarn.entity;
  */
 public class ContainerId {
 
-  private final String rmnodeid;
-  private final String containerId;
+    private final String rmnodeid;
+    private final String containerId;
+    private final int pendingEventId;
 
-  public ContainerId(String rmnodeid, String containerId) {
-    this.rmnodeid = rmnodeid;
-    this.containerId = containerId;
-  }
+    public ContainerId(String rmnodeid, String containerId, int pendingId) {
+        this.rmnodeid = rmnodeid;
+        this.containerId = containerId;
+        this.pendingEventId = pendingId;
+    }
 
-  public String getRmnodeid() {
-    return rmnodeid;
-  }
+    public String getRmnodeid() {
+        return rmnodeid;
+    }
 
-  public String getContainerId() {
-    return containerId;
-  }
+    public int getPendingEventId() {
+        return pendingEventId;
+    }
 
-  @Override
-  public String toString() {
-    return "HopContainerId{" + "rmnodeid=" + rmnodeid + ", containerId=" +
-        containerId + '}';
-  }
+    public String getContainerId() {
+        return containerId;
+    }
+
+    @Override
+    public String toString() {
+        return "HopContainerId{" + "rmnodeid=" + rmnodeid + ", containerId="
+                + containerId + '}';
+    }
 
 }

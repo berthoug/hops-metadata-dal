@@ -40,7 +40,7 @@ public interface NextHeartbeatDataAccess<T> extends EntityDataAccess {
    * @param nextHeartbeat
    * @throws StorageException
    */
-  void updateNextHeartbeat(String rmnodeid, boolean nextHeartbeat)
+  void updateNextHeartbeat(String rmnodeid, boolean nextHeartbeat,int pendingId)
       throws StorageException;
 
   Map<String, Boolean> getAll() throws StorageException;

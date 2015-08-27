@@ -17,36 +17,42 @@ package io.hops.metadata.yarn.entity;
 
 public class NextHeartbeat {
 
-  private final String rmnodeid;
-  private final boolean nextheartbeat;
+    private final String rmnodeid;
+    private final boolean nextheartbeat;
+    private final int pendingEventId;
 
-  /**
-   * @param rmnodeid
-   * @param nextheartbeat
-   */
-  public NextHeartbeat(String rmnodeid, boolean nextheartbeat) {
-    this.rmnodeid = rmnodeid;
-    this.nextheartbeat = nextheartbeat;
-  }
+    /**
+     * @param rmnodeid
+     * @param nextheartbeat
+     */
+    public NextHeartbeat(String rmnodeid, boolean nextheartbeat,int pendingId) {
+        this.rmnodeid = rmnodeid;
+        this.nextheartbeat = nextheartbeat;
+        this.pendingEventId=pendingId;
+    }
 
-  /**
-   * @return
-   */
-  public String getRmnodeid() {
-    return rmnodeid;
-  }
+    /**
+     * @return
+     */
+    public String getRmnodeid() {
+        return rmnodeid;
+    }
+    
+    public int getPendingEventId() {
+        return pendingEventId;
+    }
 
-  /**
-   * @return
-   */
-  public boolean isNextheartbeat() {
-    return nextheartbeat;
-  }
+    /**
+     * @return
+     */
+    public boolean isNextheartbeat() {
+        return nextheartbeat;
+    }
 
-  @Override
-  public String toString() {
-    return "HopNextHeartbeat{" + "rmnodeid=" + rmnodeid + ", nextheartbeat=" +
-        nextheartbeat + '}';
-  }
+    @Override
+    public String toString() {
+        return "HopNextHeartbeat{" + "rmnodeid=" + rmnodeid + ", nextheartbeat="
+                + nextheartbeat + '}';
+    }
 
 }

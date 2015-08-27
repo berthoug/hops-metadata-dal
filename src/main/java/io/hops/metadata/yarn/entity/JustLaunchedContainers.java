@@ -17,26 +17,32 @@ package io.hops.metadata.yarn.entity;
 
 public class JustLaunchedContainers {
 
-  private final String rmnodeid;
-  private final String containerid;
+    private final String rmnodeid;
+    private final String containerid;
+    private final int pendingEventId;
 
-  public JustLaunchedContainers(String rmnodeid, String containerid) {
-    this.rmnodeid = rmnodeid;
-    this.containerid = containerid;
-  }
+    public JustLaunchedContainers(String rmnodeid, String containerid, int pendingId) {
+        this.rmnodeid = rmnodeid;
+        this.containerid = containerid;
+        this.pendingEventId = pendingId;
+    }
 
-  public String getRmnodeid() {
-    return rmnodeid;
-  }
+    public int getPendingEventId() {
+        return pendingEventId;
+    }
 
-  public String getContainerId() {
-    return containerid;
-  }
+    public String getRmnodeid() {
+        return rmnodeid;
+    }
 
-  @Override
-  public String toString() {
-    return "HopJustLaunchedContainers{" + "rmnodeid=" + rmnodeid +
-        ", containerid=" + containerid + '}';
-  }
+    public String getContainerId() {
+        return containerid;
+    }
+
+    @Override
+    public String toString() {
+        return "HopJustLaunchedContainers{" + "rmnodeid=" + rmnodeid
+                + ", containerid=" + containerid + '}';
+    }
 
 }
