@@ -18,32 +18,32 @@ package io.hops.metadata.yarn.entity.rmstatestore;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AllocateResponse {
+public class AllocateResponse implements Comparable<AllocateResponse>{
 
   private final String applicationattemptid;
+  private final Integer responseId;
   private final byte[] allocateResponse;
   private final List<String> allocatedContainers;
-  private final List<byte[]> allocatedNMTokens;
   public AllocateResponse(String applicationattemptid,
       byte[] allocateResponse, List<String> allocatedContainers,
-      List<byte[]> allocatedNMTokens) {
+      int responseId) {
     this.applicationattemptid = applicationattemptid;
     this.allocateResponse = allocateResponse;
+    this.responseId = responseId;
     if(allocatedContainers!=null){
       this.allocatedContainers = allocatedContainers;
-      this.allocatedNMTokens = allocatedNMTokens;
     }else{
       this.allocatedContainers = new ArrayList<String>();
-      this.allocatedNMTokens = new ArrayList<byte[]>();
     }
   }
 
-  public AllocateResponse(String applicationattemptid,  byte[] allocateResponse) {
-    this(applicationattemptid, allocateResponse, null, null);
+  public AllocateResponse(String applicationattemptid,  byte[] allocateResponse,
+          int responseId) {
+    this(applicationattemptid, allocateResponse, null, responseId);
   }
     
-  public AllocateResponse(String applicationattemptid) {
-    this(applicationattemptid, null, null, null);
+  public AllocateResponse(String applicationattemptid, int responseId) {
+    this(applicationattemptid, null, null, responseId);
   }
   
   public String getApplicationattemptid() {
@@ -58,7 +58,17 @@ public class AllocateResponse {
     return allocatedContainers;
   }
 
-  public List<byte[]> getAllocatedNMTokens() {
-    return allocatedNMTokens;
+  public int getResponseId() {
+    return responseId;
+  }
+  
+  public int compareTo(AllocateResponse a){
+    if(applicationattemptid.compareTo(a.applicationattemptid)!=0){
+      return applicationattemptid.compareTo(a.applicationattemptid);
+    }
+    if(responseId.compareTo(a.responseId)!=0){
+      return responseId.compareTo(a.responseId);
+    }
+    return 0;
   }
 }

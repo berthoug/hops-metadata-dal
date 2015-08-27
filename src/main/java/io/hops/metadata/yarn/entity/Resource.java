@@ -15,7 +15,7 @@
  */
 package io.hops.metadata.yarn.entity;
 
-public class Resource {
+public class Resource implements Comparable<Resource>{
 
   /**
    * Used in resource primary key, to know by which class the particular
@@ -37,8 +37,8 @@ public class Resource {
   public static final int CURRENTCONSUMPTION = 6;
 
   private final String id;
-  private final int type;
-  private final int parent;
+  private final Integer type;
+  private final Integer parent;
   private int memory;
   private int virtualcores;
 
@@ -81,6 +81,20 @@ public class Resource {
   public String toString() {
     return "HopResource{" + "id=" + id + ", type=" + type + ", parent=" +
         parent + '}';
+  }
+  
+  @Override
+  public int compareTo(Resource r){
+    if(this.id.compareTo(r.id)!=0){
+      return this.id.compareTo(r.id);
+    }
+    if(this.type.compareTo(r.type)!=0){
+      return this.type.compareTo(r.type);
+    }
+    if(this.parent.compareTo(r.parent)!=0){
+      return this.parent.compareTo(r.parent);
+    }
+    return 0;
   }
 
 }

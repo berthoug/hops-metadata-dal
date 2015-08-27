@@ -8,20 +8,13 @@ package io.hops.metadata.yarn.entity;
 public class SchedulerApplicationInfoToAdd {
 
   SchedulerApplication schedulerApplication;
-  QueueMetrics queueMetrics;
 
-  public SchedulerApplicationInfoToAdd(SchedulerApplication schedulerApplication,
-          QueueMetrics queueMetrics) {
+  public SchedulerApplicationInfoToAdd(SchedulerApplication schedulerApplication) {
     this.schedulerApplication = schedulerApplication;
-    this.queueMetrics = queueMetrics;
   }
 
   public SchedulerApplication getSchedulerApplication() {
     return schedulerApplication;
-  }
-
-  public QueueMetrics getQueueMetrics() {
-    return queueMetrics;
   }
 
   
