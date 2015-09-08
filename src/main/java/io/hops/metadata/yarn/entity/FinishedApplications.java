@@ -18,7 +18,7 @@ package io.hops.metadata.yarn.entity;
 /**
  * Pojo for RMNode.finishedApplications list.
  */
-public class FinishedApplications {
+public class FinishedApplications implements Comparable<FinishedApplications>{
 
   private final String rmnodeid;
   private final String applicationId;
@@ -42,4 +42,10 @@ public class FinishedApplications {
         ", applicationId=" + applicationId + '}';
   }
 
+  public int compareTo(FinishedApplications f) {
+    if (this.rmnodeid.compareTo(f.rmnodeid) != 0) {
+      return this.rmnodeid.compareTo(f.rmnodeid);
+    }
+    return this.applicationId.compareTo(f.applicationId);
+  }
 }
