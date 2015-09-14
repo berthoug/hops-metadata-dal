@@ -15,7 +15,7 @@
  */
 package io.hops.metadata.yarn.entity;
 
-public class Container {
+public class Container implements Comparable<Container>{
 
   private final String containerId;
   private final byte[] containerstate;
@@ -31,5 +31,9 @@ public class Container {
 
   public byte[] getContainerState() {
     return containerstate;
+  }
+  
+  public int compareTo(Container c){
+    return containerId.compareTo(c.containerId);
   }
 }

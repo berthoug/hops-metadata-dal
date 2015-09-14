@@ -20,13 +20,14 @@ import io.hops.metadata.common.EntityDataAccess;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 public interface CSLeafQueueUserInfoDataAccess<T extends Object> extends
         EntityDataAccess {
 
   public T findById(String string) throws StorageException;
 
-  List<T> findAll() throws StorageException, IOException;
+  Map<String, T> findAll() throws StorageException, IOException;
 
   public void addAll(Collection<T> clctn) throws StorageException;
 

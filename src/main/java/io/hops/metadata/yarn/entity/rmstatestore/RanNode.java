@@ -6,7 +6,7 @@
 
 package io.hops.metadata.yarn.entity.rmstatestore;
 
-public class RanNode {
+public class RanNode implements Comparable<RanNode>{
   private final String applicationAttemptId;
   private final String nodeId;
 
@@ -23,5 +23,13 @@ public class RanNode {
     return nodeId;
   }
   
-  
+  public int compareTo(RanNode node){
+    if(this.applicationAttemptId.compareTo(node.getApplicationAttemptId())!=0){
+      return this.applicationAttemptId.compareTo(node.getApplicationAttemptId());
+}
+    if(this.nodeId.compareTo(node.getNodeId())!=0){
+      return this.nodeId.compareTo(node.getNodeId());
+    }
+    return 0;
+  }
 }

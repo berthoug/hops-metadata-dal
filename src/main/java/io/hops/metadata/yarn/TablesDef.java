@@ -453,8 +453,23 @@ public class TablesDef {
     public static final String TABLE_NAME = "yarn_allocate_response";
     public static final String APPLICATIONATTEMPTID = "applicationattemptid";
     public static final String ALLOCATERESPONSE = "allocate_response";
+    public static final String RESPONSEID = "responseid";
   }
 
+  public static interface AllocatedContainersTableDef {
+    public static final String TABLE_NAME = "yarn_allocated_containers";
+    public static final String APPLICATIONATTEMPTID = "applicationattemptid";
+    public static final String CONTAINERID = "containerid";
+    public static final String RESPONSEID = "responseid";
+  }
+   
+  public static interface AllocatedNMTokensTableDef {
+    public static final String TABLE_NAME = "yarn_allocated_nmtokens";
+    public static final String APPLICATIONATTEMPTID = "applicationattemptid";
+    public static final String NMTOKEN = "nmtoken";
+    public static final String RESPONSEID = "responseid";
+  }
+    
   public static interface ApplicationAttemptStateTableDef {
     public static final String TABLE_NAME = "yarn_applicationattemptstate";
     public static final String APPLICATIONID = "applicationid";

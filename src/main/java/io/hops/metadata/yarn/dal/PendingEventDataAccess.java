@@ -17,6 +17,7 @@ package io.hops.metadata.yarn.dal;
 
 import io.hops.exception.StorageException;
 import io.hops.metadata.common.EntityDataAccess;
+import io.hops.metadata.yarn.entity.PendingEvent;
 
 import java.util.Collection;
 import java.util.List;
@@ -63,5 +64,10 @@ public interface PendingEventDataAccess<T> extends EntityDataAccess {
    * @throws StorageException
    */
   void prepare(Collection<T> modified, Collection<T> removed)
+      throws StorageException;
+  
+  void addAll(Collection<T> toUpdate)
+      throws StorageException;
+  void removeAll(Collection<T> toRemove) 
       throws StorageException;
 }

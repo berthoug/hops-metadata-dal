@@ -28,4 +28,6 @@ public interface DalStorageFactory {
   public StorageConnector getConnector();
 
   public EntityDataAccess getDataAccess(Class type);
+  
+  public String printYarnState();
 }
