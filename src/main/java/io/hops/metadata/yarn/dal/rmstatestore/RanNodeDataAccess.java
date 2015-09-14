@@ -18,7 +18,7 @@ import java.util.Set;
  */
 public interface RanNodeDataAccess<T> extends EntityDataAccess {
 
-  void addAll(Collection<List<T>> toAdd) throws StorageException;
+  void addAll(Collection<Collection<T>> toAdd) throws StorageException;
   
   Map<String,List<T>> getAll() throws StorageException;
 }
