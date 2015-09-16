@@ -15,17 +15,23 @@
  */
 package io.hops.metadata.yarn.entity;
 
-public class UpdatedContainerInfo implements Comparable<UpdatedContainerInfo>{
+public class UpdatedContainerInfo implements Comparable<UpdatedContainerInfo> {
 
   private final String rmnodeid;
   private final String containerId;
   private final Integer updatedContainerInfoId;
+  private final int pendingEventId;
 
   public UpdatedContainerInfo(String rmnodeid, String containerId,
-      int updatedContainerInfoId) {
+          int updatedContainerInfoId, int pendingId) {
     this.rmnodeid = rmnodeid;
     this.containerId = containerId;
     this.updatedContainerInfoId = updatedContainerInfoId;
+    this.pendingEventId = pendingId;
+  }
+
+  public int getPendingEventId() {
+    return pendingEventId;
   }
 
   public String getRmnodeid() {
@@ -48,7 +54,7 @@ public class UpdatedContainerInfo implements Comparable<UpdatedContainerInfo>{
         '}';
   }
 
-@Override
+  @Override
   public int hashCode() {
     return updatedContainerInfoId.hashCode() + containerId.hashCode();
   }
@@ -77,7 +83,7 @@ public class UpdatedContainerInfo implements Comparable<UpdatedContainerInfo>{
     }else{
       return containerId.compareTo(other.getContainerId());
     }
-    
+
   }
-  
+
 }

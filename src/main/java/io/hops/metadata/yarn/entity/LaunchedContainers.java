@@ -49,4 +49,19 @@ public class LaunchedContainers implements Comparable<LaunchedContainers>{
     }
     return this.containerIdID.compareTo(l.containerIdID);
   }
+
+  @Override
+  public int hashCode() {
+    return schedulerNodeID.hashCode() + 100 * containerIdID.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof LaunchedContainers)) {
+      return false;
+    }
+    LaunchedContainers other = (LaunchedContainers) obj;
+    return (schedulerNodeID.equals(other.schedulerNodeID) && containerIdID.
+            equals(other.containerIdID));
+  }
 }

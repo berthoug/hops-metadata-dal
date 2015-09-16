@@ -38,6 +38,7 @@ public class TablesDef {
     public static final String TABLE_NAME = "yarn_containerid_toclean";
     public static final String CONTAINERID = "containerid";
     public static final String RMNODEID = "rmnodeid";
+    public static final String PENDING_EVENT_ID = "pendingeventid";
   }
 
   public static interface ContainerStatusTableDef {
@@ -47,6 +48,7 @@ public class TablesDef {
     public static final String STATE = "state";
     public static final String DIAGNOSTICS = "diagnostics";
     public static final String EXIT_STATUS = "exitstatus";
+    public static final String PENDING_EVENT_ID = "pendingeventid";
     public static final String RMNODEID = "rmnodeid";
     //State values
     public static final String STATE_RUNNING = "RUNNING";
@@ -94,6 +96,7 @@ public class TablesDef {
     public static final String TABLE_NAME = "yarn_rmnode_finishedapplications";
     public static final String RMNODEID = "rmnodeid";
     public static final String APPLICATIONID = "applicationid";
+    public static final String PENDING_EVENT_ID = "pendingeventid";
   }
 
   public static interface JustLaunchedContainersTableDef {
@@ -101,6 +104,7 @@ public class TablesDef {
     public static final String TABLE_NAME = "yarn_justlaunchedcontainers";
     public static final String CONTAINERID = "containerid";
     public static final String RMNODEID = "rmnodeid";
+    public static final String PENDING_EVENT_ID = "pendingeventid";
   }
 
   public static interface LaunchedContainersTableDef {
@@ -120,6 +124,7 @@ public class TablesDef {
     public static final String TABLE_NAME = "yarn_nextheartbeat";
     public static final String RMNODEID = "rmnodeid";
     public static final String NEXTHEARTBEAT = "nextheartbeat";
+    public static final String PENDING_EVENT_ID = "pendingeventid";
 
     //Field that denotes the integer value of the nextheartbeat field if is true
     public static final int NEXTHEARTBEAT_TRUE = 1;
@@ -143,6 +148,7 @@ public class TablesDef {
     public static final String LOCATION = "location";
     public static final String LEVEL = "level";
     public static final String PARENT = "parent";
+    public static final String PENDING_EVENT_ID = "pendingeventid";
   }
 
   /**
@@ -158,14 +164,16 @@ public class TablesDef {
     public static final String ID = "id";
 
     //Event Type
-    public static final byte NODE_ADDED = 1;
-    public static final byte NODE_REMOVED = 2;
-    public static final byte NODE_UPDATED = 3;
+    public static final int NODE_ADDED = 1;
+    public static final int NODE_REMOVED = 2;
+    public static final int NODE_UPDATED = 3;
 
     //Event status
-    public static final byte NEW = 1;
-    public static final byte PENDING = 2;
-    public static final byte COMPLETED = 3;
+    public static final int NEW = 1;
+    public static final int PENDING = 2;
+    public static final int COMPLETED = 3;
+    public static final int SCHEDULER_FINISHED_PROCESSING = 4;
+    public static final int SCHEDULER_NOT_FINISHED_PROCESSING = 5;
 
     //Event transactionstate action
     public static final int PERSISTEDEVENT_ADD = 1;
@@ -217,6 +225,7 @@ public class TablesDef {
     public static final String PARENT = "parent";
     public static final String MEMORY = "memory";
     public static final String VIRTUAL_CORES = "virtualcores";
+    public static final String PENDING_EVENT_ID = "pendingeventid";
   }
 
   public static interface RMContainerTableDef {
@@ -277,6 +286,7 @@ public class TablesDef {
     public static final String OVERCOMMIT_TIMEOUT = "overcommittimeout";
     public static final String NODEMANAGER_VERSION = "nodemanager_version";
     public static final String UCI_ID = "uci_id";
+    public static final String PENDING_EVENT_ID = "pendingeventid";
   }
 
   public static interface SchedulerApplicationTableDef {
@@ -292,6 +302,7 @@ public class TablesDef {
     public static final String CONTAINERID = "containerid";
     public static final String RMNODEID = "rmnodeid";
     public static final String UPDATEDCONTAINERINFOID = "updatedcontainerinfoid";
+    public static final String PENDING_EVENT_ID = "pendingeventid";
   }
 
   public static interface YarnVariablesTableDef {

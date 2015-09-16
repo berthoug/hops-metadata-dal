@@ -32,4 +32,19 @@ public class RanNode implements Comparable<RanNode>{
     }
     return 0;
   }
+
+  @Override
+  public int hashCode() {
+    return applicationAttemptId.hashCode() + 100 * nodeId.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof RanNode)) {
+      return false;
+    }
+    RanNode other = (RanNode) obj;
+    return (applicationAttemptId.equals(other.applicationAttemptId) && nodeId.
+            equals(other.nodeId));
+  }
 }

@@ -10,7 +10,6 @@ import io.hops.metadata.common.EntityDataAccess;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  *
@@ -18,7 +17,7 @@ import java.util.Set;
  */
 public interface RanNodeDataAccess<T> extends EntityDataAccess {
 
-  void addAll(Collection<Collection<T>> toAdd) throws StorageException;
+  void addAll(Collection<Map<Integer, T>> toAdd) throws StorageException;
   
   Map<String,List<T>> getAll() throws StorageException;
 }

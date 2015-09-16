@@ -44,20 +44,31 @@ public class ResourceRequest implements Comparable<ResourceRequest> {
   public byte[] getResourcerequeststate() {
     return resourcerequeststate;
   }
-  
-   @Override
+
+  @Override
   public int hashCode() {
-    
-    return id.hashCode();
+
+    return id.hashCode() + 100 * priority + 200 * name.hashCode();
   }
 
   @Override
   public boolean equals(Object obj) {
-    return id.equals(obj);
+    if (!(obj instanceof ResourceRequest)) {
+      return false;
+    }
+    ResourceRequest other = (ResourceRequest) obj;
+    return (id.equals(other.id) && priority == other.priority && name.equals(
+            other.name));
   }
 
   @Override
   public int compareTo(ResourceRequest other) {
-    return id.compareTo(other.getId());
+    if (id.compareTo(other.id) != 0) {
+      return id.compareTo(other.id);
+    } else if (priority != other.priority) {
+      return priority - other.priority;
+    } else {
+      return name.compareTo(other.name);
+    }
   }
 }

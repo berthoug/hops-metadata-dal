@@ -71,4 +71,19 @@ public class AllocateResponse implements Comparable<AllocateResponse>{
     }
     return 0;
   }
+
+  @Override
+  public int hashCode() {
+    return applicationattemptid.hashCode() + 100 * responseId.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof AllocateResponse)) {
+      return false;
+    }
+    AllocateResponse other = (AllocateResponse) obj;
+    return (applicationattemptid.equals(other.applicationattemptid)
+            && responseId.equals(other.responseId));
+  }
 }

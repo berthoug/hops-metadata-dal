@@ -36,4 +36,19 @@ public class Container implements Comparable<Container>{
   public int compareTo(Container c){
     return containerId.compareTo(c.containerId);
   }
+
+  @Override
+  public int hashCode() {
+
+    return containerId.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof Container)) {
+      return false;
+    }
+    Container other = (Container) obj;
+    return containerId.equals(other.containerId);
+  }
 }
