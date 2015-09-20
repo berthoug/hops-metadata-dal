@@ -19,18 +19,12 @@ public class JustLaunchedContainers {
 
   private final String rmnodeid;
   private final String containerid;
-  private final int pendingEventId;
 
-  public JustLaunchedContainers(String rmnodeid, String containerid,
-          int pendingId) {
+  public JustLaunchedContainers(String rmnodeid, String containerid) {
     this.rmnodeid = rmnodeid;
     this.containerid = containerid;
-    this.pendingEventId = pendingId;
   }
 
-  public int getPendingEventId() {
-    return pendingEventId;
-  }
 
   public String getRmnodeid() {
     return rmnodeid;
