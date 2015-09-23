@@ -46,7 +46,7 @@ public class FinishedApplications implements Comparable<FinishedApplications>{
   @Override
   public String toString() {
     return "HopFinishedApplications{" + "rmnodeid=" + rmnodeid +
-        ", applicationId=" + applicationId + '}';
+        ", applicationId=" + applicationId + ", pendingevetid=" + pendingEventId + '}';
   }
 
   public int compareTo(FinishedApplications f) {

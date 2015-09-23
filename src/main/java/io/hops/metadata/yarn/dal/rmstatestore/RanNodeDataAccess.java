@@ -17,7 +17,7 @@ import java.util.Map;
  */
 public interface RanNodeDataAccess<T> extends EntityDataAccess {
 
-  void addAll(Collection<List<T>> toAdd) throws StorageException;
+  void addAll(Collection<Map<Integer, T>> toAdd) throws StorageException;
   
   Map<String,List<T>> getAll() throws StorageException;
 }
