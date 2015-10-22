@@ -124,11 +124,8 @@ public class RMNode implements Comparable<RMNode> {
     if (o == null) {
       throw new NullPointerException("HOP :: HopRMNode was null");
     }
-    if (this.nodeId.equals(o.getNodeId())) {
-      return 0;
-    } else {
-      return -1;
-    }
+    return this.nodeId.compareTo(o.nodeId);
+    
   }
 
   @Override

@@ -17,6 +17,7 @@ package io.hops.metadata.yarn.entity.rmstatestore;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class AllocateResponse implements Comparable<AllocateResponse>{
 
@@ -24,9 +25,11 @@ public class AllocateResponse implements Comparable<AllocateResponse>{
   private final Integer responseId;
   private final byte[] allocateResponse;
   private final List<String> allocatedContainers;
+  private final Map<String, byte[]> completedContainerStatus;
+  
   public AllocateResponse(String applicationattemptid,
       byte[] allocateResponse, List<String> allocatedContainers,
-      int responseId) {
+      int responseId, Map<String, byte[]> completedContainersStatus) {
     this.applicationattemptid = applicationattemptid;
     this.allocateResponse = allocateResponse;
     this.responseId = responseId;
@@ -35,15 +38,16 @@ public class AllocateResponse implements Comparable<AllocateResponse>{
     }else{
       this.allocatedContainers = new ArrayList<String>();
     }
+    this.completedContainerStatus = completedContainersStatus;
   }
 
   public AllocateResponse(String applicationattemptid,  byte[] allocateResponse,
           int responseId) {
-    this(applicationattemptid, allocateResponse, null, responseId);
+    this(applicationattemptid, allocateResponse, null, responseId, null);
   }
     
   public AllocateResponse(String applicationattemptid, int responseId) {
-    this(applicationattemptid, null, null, responseId);
+    this(applicationattemptid, null, null, responseId, null);
   }
   
   public String getApplicationattemptid() {
@@ -58,6 +62,10 @@ public class AllocateResponse implements Comparable<AllocateResponse>{
     return allocatedContainers;
   }
 
+  public Map<String, byte[]> getCompletedContainersStatus(){
+    return completedContainerStatus;
+  }
+  
   public int getResponseId() {
     return responseId;
   }

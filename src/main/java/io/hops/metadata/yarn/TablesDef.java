@@ -463,6 +463,14 @@ public class TablesDef {
     public static final String RESPONSEID = "responseid";
   }
    
+  public static interface CompletedContainersStatusTableDef {
+    public static final String TABLE_NAME = "yarn_completed_containers_status";
+    public static final String APPLICATIONATTEMPTID = "applicationattemptid";
+    public static final String CONTAINERID = "containerid";
+    public static final String RESPONSEID = "responseid";
+    public static final String STATUS = "status";
+  }
+  
   public static interface AllocatedNMTokensTableDef {
     public static final String TABLE_NAME = "yarn_allocated_nmtokens";
     public static final String APPLICATIONATTEMPTID = "applicationattemptid";
