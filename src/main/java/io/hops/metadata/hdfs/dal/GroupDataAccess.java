@@ -20,18 +20,8 @@ import io.hops.metadata.common.EntityDataAccess;
 
 import java.util.Collection;
 
-public interface LeasePathDataAccess<T> extends EntityDataAccess {
-
-  Collection<T> findByHolderId(int holderId) throws StorageException;
-
-  Collection<T> findByPrefix(String prefix) throws StorageException;
-
-  Collection<T> findAll() throws StorageException;
-
-  T findByPath(String path) throws StorageException;
-
-  void prepare(Collection<T> removed, Collection<T> newed,
-      Collection<T> modified) throws StorageException;
-
-  void removeAll() throws StorageException;
+public interface GroupDataAccess<T> extends EntityDataAccess{
+  T getGroup(byte[] id) throws StorageException;
+  void addGroup(T group) throws StorageException;
+  Collection<T> getGroups(Collection<byte[]> ids) throws StorageException;
 }

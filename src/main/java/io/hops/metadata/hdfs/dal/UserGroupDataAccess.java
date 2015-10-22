@@ -18,20 +18,11 @@ package io.hops.metadata.hdfs.dal;
 import io.hops.exception.StorageException;
 import io.hops.metadata.common.EntityDataAccess;
 
-import java.util.Collection;
+import java.util.List;
 
-public interface LeasePathDataAccess<T> extends EntityDataAccess {
-
-  Collection<T> findByHolderId(int holderId) throws StorageException;
-
-  Collection<T> findByPrefix(String prefix) throws StorageException;
-
-  Collection<T> findAll() throws StorageException;
-
-  T findByPath(String path) throws StorageException;
-
-  void prepare(Collection<T> removed, Collection<T> newed,
-      Collection<T> modified) throws StorageException;
-
-  void removeAll() throws StorageException;
+public interface UserGroupDataAccess<U,G> extends EntityDataAccess{
+  void addUserToGroup(U user, G group) throws StorageException;
+  void addUserToGroup(byte[] userId, byte[] groupId) throws StorageException;
+  List<G> getGroupsForUser(U user) throws StorageException;
+  List<G> getGroupsForUser(byte[] userId) throws StorageException;
 }

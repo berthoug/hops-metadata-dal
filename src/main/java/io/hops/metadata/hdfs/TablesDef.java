@@ -31,6 +31,8 @@ public class TablesDef {
     public static final String PARENT_ID = "parent_id";
     public static final String MODIFICATION_TIME = "modification_time";
     public static final String ACCESS_TIME = "access_time";
+    public static final String USER_ID = "user_id";
+    public static final String GROUP_ID = "group_id";
     public static final String PERMISSION = "permission";
     public static final String CLIENT_NAME = "client_name";
     public static final String CLIENT_MACHINE = "client_machine";
@@ -44,6 +46,24 @@ public class TablesDef {
     public static final String SUBTREE_LOCK_OWNER = "subtree_lock_owner";
     public static final String META_ENABLED = "meta_enabled";
     public static final String SIZE = "size";
+  }
+
+  public static interface UsersTableDef {
+    public static final String TABLE_NAME = "hdfs_users";
+    public static final String ID = "id";
+    public static final String Name = "name";
+  }
+
+  public static interface GroupsTableDef {
+    public static final String TABLE_NAME = "hdfs_groups";
+    public static final String ID = "id";
+    public static final String Name = "name";
+  }
+
+  public static interface UsersGroupsTableDef {
+    public static final String TABLE_NAME = "hdfs_users_groups";
+    public static final String USER_ID = "user_id";
+    public static final String GROUP_ID = "group_id";
   }
 
   public static interface BlockChecksumTableDef {
@@ -120,22 +140,16 @@ public class TablesDef {
   }
 
   public static interface LeaseTableDef {
-
     public static final String TABLE_NAME = "hdfs_leases";
     public static final String HOLDER = "holder";
     public static final String LAST_UPDATE = "last_update";
     public static final String HOLDER_ID = "holder_id";
-    public static final String PART_KEY = "part_key";
-    public static final int PART_KEY_VAL = 0;
   }
 
   public static interface LeasePathTableDef {
-
     public static final String TABLE_NAME = "hdfs_lease_paths";
-    public static final String PART_KEY = "part_key";
     public static final String HOLDER_ID = "holder_id";
     public static final String PATH = "path";
-    public static final int PART_KEY_VAL = 0;
   }
 
   public static interface InvalidatedBlockTableDef {
@@ -268,11 +282,9 @@ public class TablesDef {
   public static interface OnGoingSubTreeOpsDef {
 
     public static final String TABLE_NAME = "hdfs_on_going_sub_tree_ops";
-    public static final String PART_KEY = "part_key";
     public static final String PATH = "path";
     public static final String NAME_NODE_ID = "namenode_id";
     public static final String OP_NAME = "op_name";
-    public static final int PART_KEY_VAL = 0;
-    public static final int LIMIT = 1000;
+    public static final int LIMIT = 5;
   } 
 }
