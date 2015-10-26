@@ -163,6 +163,7 @@ public class TablesDef {
     public static final String STATUS = "status";
     public static final String ID = "id";
 
+    //TODO this should not be in tableDef
     //Event Type
     public static final int NODE_ADDED = 1;
     public static final int NODE_REMOVED = 2;
