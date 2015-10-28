@@ -58,14 +58,6 @@ public interface PendingEventDataAccess<T> extends EntityDataAccess {
    */
   void removePendingEvent(T pendingEvent) throws StorageException;
 
-  /**
-   * @param modified
-   * @param removed
-   * @throws StorageException
-   */
-  void prepare(Collection<T> modified, Collection<T> removed)
-      throws StorageException;
-
   void addAll(Collection<T> toUpdate) throws StorageException;
 
   void removeAll(Collection<T> toRemove) throws StorageException;

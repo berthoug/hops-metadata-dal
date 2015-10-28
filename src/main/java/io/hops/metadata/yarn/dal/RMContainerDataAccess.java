@@ -29,7 +29,7 @@ public interface RMContainerDataAccess<T> extends EntityDataAccess {
 
   Map<String, RMContainer> getAll() throws StorageException;
 
-  void addAll(Collection<T> toAdd, LinkedBlockingQueue<String> logs, int id) throws StorageException;
+  void addAll(Collection<T> toAdd) throws StorageException;
 
   void removeAll(Collection<T> toRemove) throws StorageException;
   
