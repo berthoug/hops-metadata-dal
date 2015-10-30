@@ -15,9 +15,9 @@
  */
 package io.hops.metadata.yarn.entity.appmasterrpc;
 
-public class RPC {
+public class RPC implements Comparable<RPC>{
 
-  private final int rpcId;
+  private final Integer rpcId;
   private final Type type;
   private final byte[] rpc;
   private final String userId;
@@ -68,4 +68,8 @@ public class RPC {
         '}';
   }
 
+  @Override
+  public int compareTo(RPC other){
+    return this.rpcId.compareTo(other.rpcId);
+  }
 }
