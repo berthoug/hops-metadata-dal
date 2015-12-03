@@ -550,10 +550,8 @@ public class TablesDef {
     public static final String TABLE_NAME = "yarn_containers_logs";
     public static final String CONTAINERID = "containerid";
     public static final String STATE = "state";
-    public static final String USER = "user";
     public static final String START = "start";
     public static final String STOP = "stop";   
-    public static final String COUNTED = "counted";   
     //State values
     public static final String STATE_RUNNING = "RUNNING";
     public static final String STATE_COMPLETED = "COMPLETE";
@@ -562,6 +560,7 @@ public class TablesDef {
   public static interface YarnProjectsQuotaTableDef {
       public static final String TABLE_NAME = "yarn_projects_quota";
       public static final String PROJECTID = "projectid";   
-      public static final String CREDIT = "credit";   
+      public static final String REMAINING_QUOTA = "remaining_quota";   
+      public static final String TOTAL_USED_QUOTA = "total_used_quota";
   }
 }
