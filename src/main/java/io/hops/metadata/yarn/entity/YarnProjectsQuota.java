@@ -11,23 +11,30 @@ package io.hops.metadata.yarn.entity;
  */
 public class YarnProjectsQuota {
     private final String projectid;
-    private final int credit;
-
-    public YarnProjectsQuota(String projectid, int credit) {
+    private final int remaining_quota;
+    private final int total_used_quota;
+    
+    public YarnProjectsQuota(String projectid, int remaining_quota,int total_used_quota) {
         this.projectid = projectid;
-        this.credit = credit;
+        this.remaining_quota = remaining_quota;
+        this.total_used_quota = total_used_quota;
     }
 
     public String getProjectid() {
         return projectid;
     }
 
-    public int getCredit() {
-        return credit;
+    public int getRemainingQuota() {
+        return remaining_quota;
     }
-
+    
+    
+    public int getTotalUsedQuota() {
+        return total_used_quota;
+    }
+    
     @Override
     public String toString() {
-        return "YarnProjectsQuota{" + "projectid=" + projectid + ", credit=" + credit  + " }";
+        return "YarnProjectsQuota{" + "projectid=" + projectid + ", remaining_quota=" + remaining_quota  + ", total_used_quota=" + total_used_quota  + " }";
     }   
 }
