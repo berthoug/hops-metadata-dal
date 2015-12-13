@@ -12,11 +12,11 @@ package io.hops.metadata.yarn.entity;
 public class YarnContainersLogs {
 
     private final String containerid;
-    private final String state;    
-    private final int start;
-    private final int stop;
+    private final int state;    
+    private final long start;
+    private final long stop;
     
-    public YarnContainersLogs(String containerid, String state, int start, int stop) {
+    public YarnContainersLogs(String containerid, int state, long start, long stop) {
         this.containerid = containerid;
         this.state = state;
         this.start = start;
@@ -27,15 +27,15 @@ public class YarnContainersLogs {
         return containerid;
     }
 
-    public String getState() {
+    public int getState() {
         return state;
     }
 
-    public int getStart() {
+    public long getStart() {
         return start;
     }
 
-    public int getStop() {
+    public long getStop() {
         return stop;
     }
         
