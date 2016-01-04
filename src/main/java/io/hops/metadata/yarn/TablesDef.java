@@ -563,4 +563,12 @@ public class TablesDef {
       public static final String REMAINING_QUOTA = "remaining_quota";   
       public static final String TOTAL_USED_QUOTA = "total_used_quota";
   }
+  
+  public static interface YarnProjectsDailyCostTableDef {
+      public static final String TABLE_NAME = "yarn_projects_daily_cost";
+      public static final String PROJECTNAME = "projectname";   
+      public static final String USER = "user";   
+      public static final String DAY = "day";   
+      public static final String CREDITS_USED = "credits_used";
+  }  
 }

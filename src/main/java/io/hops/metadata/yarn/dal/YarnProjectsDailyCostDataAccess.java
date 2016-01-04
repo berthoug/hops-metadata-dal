@@ -7,7 +7,7 @@ package io.hops.metadata.yarn.dal;
 
 import io.hops.exception.StorageException;
 import io.hops.metadata.common.EntityDataAccess;
-import io.hops.metadata.yarn.entity.YarnProjectsQuota;
+import io.hops.metadata.yarn.entity.YarnProjectsDailyCost;
 import java.util.Collection;
 import java.util.Map;
 
@@ -15,12 +15,12 @@ import java.util.Map;
  *
  * @author rizvi
  */
-public interface YarnProjectsQuotaDataAccess<T> extends EntityDataAccess{
+public interface YarnProjectsDailyCostDataAccess<T> extends EntityDataAccess{
+    
+    //T findEntry(String projectId) throws StorageException;
 
-    T findEntry(String projectId) throws StorageException;
+    Map<String, YarnProjectsDailyCost> getAll() throws StorageException;
 
-    Map<String, YarnProjectsQuota> getAll() throws StorageException;
-
-    void addAll(Collection<T> YarnProjectsQuota) throws StorageException;
-  
+    void addAll(Collection<T> YarnProjectsDailyCost) throws StorageException;
+    
 }
