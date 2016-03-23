@@ -13,17 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.hops.metadata.yarn.dal.capacity;
+package io.hops;
 
-import io.hops.exception.StorageException;
-import io.hops.metadata.common.EntityDataAccess;
+/**
+ *
+ * @author sri
+ */
 
-import java.util.Collection;
+public interface DalNdbEventStreaming {
 
-public interface FiCaSchedulerAppReservationsDataAccess<T>
-    extends EntityDataAccess {
-  T findById(int id) throws StorageException;
+    public void startHopsNdbEvetAPISession();
 
-  void prepare(Collection<T> modified, Collection<T> removed)
-      throws StorageException;
+    public void closeHopsNdbEventAPISession();
+
+    public boolean isNativeCodeLoaded();
+
 }
