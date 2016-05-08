@@ -13,24 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.hops.metadata.yarn.dal;
-
-import io.hops.exception.StorageException;
-import io.hops.metadata.common.EntityDataAccess;
-import io.hops.metadata.yarn.entity.FiCaSchedulerAppContainer;
-
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-
-public interface FiCaSchedulerAppLiveContainersDataAccess<T>
-    extends EntityDataAccess {
-
-  Map<String, List<FiCaSchedulerAppContainer>> getAll()
-      throws StorageException;
+package io.hops.metadata.yarn.entity;
 
 
-  void addAll(Collection<T> toAdd) throws StorageException;
+public class JustFinishedContainer {
+  private final String containerId;
+  private final String appAttemptId;
+  private final byte[] container;
 
-  void removeAll(Collection<T> toRemove) throws StorageException;
+  public JustFinishedContainer(String containerId, String appAttemptId,
+          byte[] container) {
+    this.containerId = containerId;
+    this.appAttemptId = appAttemptId;
+    this.container = container;
+  }
+
+  public String getContainerId() {
+    return containerId;
+  }
+
+  public String getAppAttemptId() {
+    return appAttemptId;
+  }
+
+  public byte[] getContainer() {
+    return container;
+  }
+  
+  
 }
