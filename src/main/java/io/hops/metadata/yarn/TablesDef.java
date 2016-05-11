@@ -77,6 +77,8 @@ public class TablesDef {
     public static final String STOP = "stop";
     public static final String EXITSTATUS = "exit_status";
     public static final String PRICE = "price";
+
+    
   }
 
   public static interface FiCaSchedulerNodeTableDef {
@@ -557,6 +559,9 @@ public class TablesDef {
     public static final String USER = "appuser";
     public static final String NAME = "appname";
     public static final String SMSTATE = "appsmstate";
+    public static final String TIMELIMIT = "timelimit";
+    public static final String BUDGETLIMIT = "budgetlimit";
+    public static final String PRICELIMIT = "pricelimit";
   }
   
   public static interface UpdatedNodeTableDef {
@@ -639,9 +644,27 @@ public class TablesDef {
     public static final String PRICE = "price";
   }
   
+
+  public static interface YarnApplicationsQuotaTableDef {
+    public static final String TABLE_NAME = "yarn_applications_quota";    
+    public static final String APPLICATIONID = "applicationid";
+    public static final String TIMEUSED = "timeused";
+    public static final String BUDGETUSED = "budgetused";
+  }
+  
   public static interface CSLeafQueuesPendingAppsTableDef {
     public static final String TABLE_NAME = "yarn_cs_leaf_queue_pending_apps";
     public static final String APPATTEMPTID = "app_attempt_id";
     public static final String PATH = "path";
+
   }
+  
+  public static interface YarnApplicationsToKillTableDef {
+    public static final String TABLE_NAME = "yarn_applications_to_kill";    
+    public static final String APPLICATIONID = "applicationid";
+    public static final String RMNODEID = "rmnodeid";
+    public static final String PENDING_EVENT_ID = "pendingeventid";
+    
+  }
+  
 }

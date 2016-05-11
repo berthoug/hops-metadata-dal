@@ -44,8 +44,8 @@ public class YarnRunningPrice {
   
   @Override
   public String toString() {
-    return "YarnProjectsQuota{" + "type=" + type + ", time=" + time + ", price="
-            + price + " }";
+
+    return "YarnProjectsQuota{" + "type=" + type + ", time=" + time + ", price=" + price + " }";
   }
 
 }

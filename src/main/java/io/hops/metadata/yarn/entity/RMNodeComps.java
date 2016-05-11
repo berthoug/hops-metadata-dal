@@ -34,6 +34,9 @@ public class RMNodeComps {
   private final List<ContainerStatus> hopContainersStatus;
   private Map<String, ContainerStatus> hopContainerStatusMap;
   private final String rmNodeId;
+  private List<String> hopApplicationsToKillList = null;
+
+  
 
   public RMNodeComps(RMNode hopRMNode, NextHeartbeat hopNextHeartbeat,
           Node hopNode,
@@ -42,7 +45,9 @@ public class RMNodeComps {
           List<UpdatedContainerInfo> hopUpdatedContainerInfo,
           List<ContainerId> hopContainerIdsToClean,
           List<FinishedApplications> hopFinishedApplications,
-          List<ContainerStatus> hopContainersStatus, String rmNodeId) {
+          List<ContainerStatus> hopContainersStatus, 
+          String rmNodeId,
+          List<String> hopApplicationsToKillList) {
     this.hopRMNode = hopRMNode;
     this.hopNextHeartbeat = hopNextHeartbeat;
     this.hopNode = hopNode;
@@ -54,6 +59,7 @@ public class RMNodeComps {
     this.hopFinishedApplications = hopFinishedApplications;
     this.hopContainersStatus = hopContainersStatus;
     this.rmNodeId = rmNodeId;
+    this.hopApplicationsToKillList = hopApplicationsToKillList;
   }
 
 //  public RMNodeComps(RMNode hopRMNode, NextHeartbeat hopNextHeartbeat,
@@ -122,5 +128,9 @@ public class RMNodeComps {
 
   public String getRMNodeId(){
     return rmNodeId;
+  }
+  
+  public List<String> getHopApplicationsToKillList() {
+    return hopApplicationsToKillList;
   }
 }
