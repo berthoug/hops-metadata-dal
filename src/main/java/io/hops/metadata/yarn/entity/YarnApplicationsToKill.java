@@ -14,7 +14,8 @@ public class YarnApplicationsToKill {
     private final String rmnodeId;
     private final int pendingEventId;
     
-    
+    //if we alway put the default value for rmnodeid and pendingEventId we can 
+    //probably not pass them as argument.
     public YarnApplicationsToKill(int pendingEventId , String rmnodeid, String applicationId) {
         this.applicationId = applicationId;
         this.pendingEventId = pendingEventId;

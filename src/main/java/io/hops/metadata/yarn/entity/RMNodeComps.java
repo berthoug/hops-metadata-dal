@@ -36,8 +36,6 @@ public class RMNodeComps {
   private final String rmNodeId;
   private List<String> hopApplicationsToKillList = null;
 
-  
-
   public RMNodeComps(RMNode hopRMNode, NextHeartbeat hopNextHeartbeat,
           Node hopNode,
           NodeHBResponse hopNodeHBResponse, Resource hopResource,

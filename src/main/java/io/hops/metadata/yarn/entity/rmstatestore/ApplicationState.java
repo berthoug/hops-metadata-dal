@@ -26,7 +26,6 @@ public class ApplicationState {
   private final Float budgetLimit;
   private final Float priceLimit;
   
-
   public ApplicationState(String applicationid) {
     this(applicationid, null, null, null, null, 0l, 0.0f, 0.0f);
   }
@@ -83,7 +82,6 @@ public class ApplicationState {
         return priceLimit;
     }
   
-
   @Override
   public String toString() {
     String str = "HopApplicationState{" + "applicationid=" + applicationId;
