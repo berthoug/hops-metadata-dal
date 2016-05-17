@@ -77,8 +77,6 @@ public class TablesDef {
     public static final String STOP = "stop";
     public static final String EXITSTATUS = "exit_status";
     public static final String PRICE = "price";
-
-    
   }
 
   public static interface FiCaSchedulerNodeTableDef {
@@ -644,7 +642,6 @@ public class TablesDef {
     public static final String PRICE = "price";
   }
   
-
   public static interface YarnApplicationsQuotaTableDef {
     public static final String TABLE_NAME = "yarn_applications_quota";    
     public static final String APPLICATIONID = "applicationid";
@@ -656,7 +653,6 @@ public class TablesDef {
     public static final String TABLE_NAME = "yarn_cs_leaf_queue_pending_apps";
     public static final String APPATTEMPTID = "app_attempt_id";
     public static final String PATH = "path";
-
   }
   
   public static interface YarnApplicationsToKillTableDef {

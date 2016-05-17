@@ -21,5 +21,7 @@ public interface YarnApplicationsQuotaDataAccess<T> extends EntityDataAccess {
   Map<String, T> getAll() throws StorageException;
 
   void addAll(Collection<T> YarnApplicationsQuota) throws StorageException;
+  
+  void removeAll(Collection<T> KilledApplicationsList) throws StorageException;
     
 }

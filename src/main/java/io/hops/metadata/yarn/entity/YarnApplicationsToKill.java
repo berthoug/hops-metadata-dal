@@ -5,10 +5,6 @@
  */
 package io.hops.metadata.yarn.entity;
 
-/**
- *
- * @author rizvi
- */
 public class YarnApplicationsToKill {
     private final String applicationId;
     private final String rmnodeId;
@@ -20,6 +16,11 @@ public class YarnApplicationsToKill {
         this.pendingEventId = pendingEventId;
         this.rmnodeId = rmnodeid;
     }    
+    
+    public YarnApplicationsToKill(String applicationId) {      
+        this(-1, "killAppNodeId", applicationId);        
+    }    
+
 
     public String getApplicationId() {
         return applicationId;
