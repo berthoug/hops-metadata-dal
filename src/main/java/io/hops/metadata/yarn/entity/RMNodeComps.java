@@ -60,19 +60,20 @@ public class RMNodeComps {
     this.hopApplicationsToKillList = hopApplicationsToKillList;
   }
 
-//  public RMNodeComps(RMNode hopRMNode, NextHeartbeat hopNextHeartbeat,
-//          Node hopNode,
-//          NodeHBResponse hopNodeHBResponse, Resource hopResource,
-//          List<JustLaunchedContainers> hopJustLaunchedContainers,
-//          List<UpdatedContainerInfo> hopUpdatedContainerInfo,
-//          List<ContainerId> hopContainerIdsToClean,
-//          List<FinishedApplications> hopFinishedApplications,
-//          List<ContainerStatus> hopContainersStatus) {
-//    this(hopRMNode, hopNextHeartbeat, hopNode, hopNodeHBResponse, hopResource,
-//            null, hopJustLaunchedContainers, hopUpdatedContainerInfo,
-//            hopContainerIdsToClean, hopFinishedApplications, hopContainersStatus);
-//  }
-
+  public RMNodeComps(RMNode hopRMNode, NextHeartbeat hopNextHeartbeat,
+          Node hopNode,
+          NodeHBResponse hopNodeHBResponse, Resource hopResource,
+          PendingEvent hopPendingEvent,
+          List<UpdatedContainerInfo> hopUpdatedContainerInfo,
+          List<ContainerId> hopContainerIdsToClean,
+          List<FinishedApplications> hopFinishedApplications,
+          List<ContainerStatus> hopContainersStatus, 
+          String rmNodeId) {
+    this(hopRMNode, hopNextHeartbeat, hopNode, hopNodeHBResponse, hopResource,
+            hopPendingEvent, hopUpdatedContainerInfo,
+            hopContainerIdsToClean, hopFinishedApplications, hopContainersStatus,rmNodeId,null);
+  }
+  
   public PendingEvent getPendingEvent() {
     return hopPendingEvent;
   }

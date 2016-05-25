@@ -642,7 +642,6 @@ public class TablesDef {
     public static final String PRICE = "price";
   }
   
-  //what is this for?
   public static interface YarnApplicationsQuotaTableDef {
     public static final String TABLE_NAME = "yarn_applications_quota";    
     public static final String APPLICATIONID = "applicationid";

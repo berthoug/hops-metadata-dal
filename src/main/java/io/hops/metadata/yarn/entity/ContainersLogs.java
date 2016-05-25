@@ -15,11 +15,11 @@
  */
 package io.hops.metadata.yarn.entity;
 
-public class ContainersLogs implements Comparable<ContainersLogs> {
+public class ContainersLogs {
 
   private final String containerId;
   private final long start;
-  private long stop;
+  private Long stop;
   private int exitStatus;
   private float price;
 
@@ -56,7 +56,7 @@ public class ContainersLogs implements Comparable<ContainersLogs> {
     return stop;
   }
 
-  public void setStop(int stop) {
+  public void setStop(long stop) {
     this.stop = stop;
   }
 
@@ -76,11 +76,20 @@ public class ContainersLogs implements Comparable<ContainersLogs> {
   }
 
   @Override
-  public int compareTo(ContainersLogs other) {
-    if (this.equals(other)) {
-      return 0;
+  public int hashCode() {
+    return this.containerId.hashCode() + 100 * this.exitStatus + 10000
+            * this.stop.hashCode();
+  }
+  
+  @Override
+  public boolean equals(Object obj) {
+    if (obj instanceof ContainersLogs) {
+      ContainersLogs other = (ContainersLogs) obj;
+      if (other.containerId.equals(this.containerId) && other.exitStatus
+              == this.exitStatus && other.stop.equals(this.stop)) {
+        return true;
+      }
     }
-    return containerId.compareTo(other.getContainerid());
-
+    return false;
   }
 }

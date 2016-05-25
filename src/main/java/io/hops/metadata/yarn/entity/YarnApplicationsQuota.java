@@ -21,6 +21,10 @@ public class YarnApplicationsQuota {
     this.timeUsed= timeUsed;
     this.budgetUsed = budgetUsed;
   }
+  
+  public YarnApplicationsQuota(String applicationId) {
+    this(applicationId, 0l, 0.0f);
+  }
 
     public String getApplicationId() {
         return applicationId;

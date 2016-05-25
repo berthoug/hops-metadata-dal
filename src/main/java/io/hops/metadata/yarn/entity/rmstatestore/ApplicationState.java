@@ -22,20 +22,22 @@ public class ApplicationState {
   private final String user;
   private final String name;
   private final String state;
-  private final Long timeLimit;    
+  private final Long timeLimit;
   private final Float budgetLimit;
   private final Float priceLimit;
-  
+
   public ApplicationState(String applicationid) {
     this(applicationid, null, null, null, null, 0l, 0.0f, 0.0f);
   }
-  
-  public ApplicationState(String applicationid, byte[] appstate, String user, String name, String state) {      
-      this(applicationid, appstate, user, name, state, 0l, 0.0f, 0.0f);
+
+  public ApplicationState(String applicationid, byte[] appstate, String user,
+          String name, String state) {
+    this(applicationid, appstate, user, name, state, 0l, 0.0f, 0.0f);
   }
-  
+
   public ApplicationState(String applicationId, byte[] appstate, String user,
-      String name, String state, Long timeLimit, Float budgetLimit, Float priceLimit) {
+          String name, String state, Long timeLimit, Float budgetLimit,
+          Float priceLimit) {
     this.applicationId = applicationId;
     this.appstate = appstate;
     this.name = name;
@@ -69,19 +71,19 @@ public class ApplicationState {
   public String getState() {
     return state;
   }
-  
+
   public Long getTimeLimit() {
-        return timeLimit;
-    }
+    return timeLimit;
+  }
 
-    public Float getBudgetLimit() {
-        return budgetLimit;
-    }
+  public Float getBudgetLimit() {
+    return budgetLimit;
+  }
 
-    public Float getPriceLimit() {
-        return priceLimit;
-    }
-  
+  public Float getPriceLimit() {
+    return priceLimit;
+  }
+
   @Override
   public String toString() {
     String str = "HopApplicationState{" + "applicationid=" + applicationId;

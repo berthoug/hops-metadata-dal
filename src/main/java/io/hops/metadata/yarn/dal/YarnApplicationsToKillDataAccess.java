@@ -22,5 +22,7 @@ public interface YarnApplicationsToKillDataAccess<T> extends EntityDataAccess {
   Map<String, T> getAll() throws StorageException;
 
   void addAll(Collection<T> YarnApplicationsListToKill) throws StorageException;
-  //you never remove?!  
+  
+  void removeAll(Collection<T> KilledApplicationsList) throws StorageException;
+    
 }
