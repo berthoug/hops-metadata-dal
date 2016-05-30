@@ -32,26 +32,23 @@ public interface InvalidateBlockDataAccess<T> extends EntityDataAccess {
   Map<Long,Long> findInvalidatedBlockByStorageIdUsingMySQLServer(int storageId)
       throws StorageException;
 
-  List<T> findInvalidatedBlocksByBlockId(long bid, int inodeId)
-      throws StorageException;
+  List<T> findInvalidatedBlocksByBlockId(long bid, int inodeId) throws StorageException;
   
   List<T> findInvalidatedBlocksByINodeId(int inodeId) throws StorageException;
 
-  List<T> findInvalidatedBlocksByINodeIds(int[] inodeIds)
-      throws StorageException;
+  List<T> findInvalidatedBlocksByINodeIds(int[] inodeIds) throws StorageException;
   
   List<T> findAllInvalidatedBlocks() throws StorageException;
 
-  List<T> findInvalidatedBlocksbyPKS(long[] blockIds, int[] inodesIds,
-      int[] storageIds) throws StorageException;
+  List<T> findInvalidatedBlocksbyPKS(long[] blockIds, int[] inodesIds, int[] storageIds) throws StorageException;
 
-  T findInvBlockByPkey(long blockId, int storageId, int inodeId)
-      throws StorageException;
+  T findInvBlockByPkey(long blockId, int sid, int inodeId) throws StorageException;
 
-  void prepare(Collection<T> removed, Collection<T> newed,
-      Collection<T> modified) throws StorageException;
+  void prepare(Collection<T> removed, Collection<T> newed, Collection<T> modified) throws StorageException;
 
   void removeAll() throws StorageException;
 
-  void removeAllByStorageId(int storageId) throws StorageException;
+  void removeAllBySid(int sid) throws StorageException;
+
+  void removeByBlockIdAndSid(long blockId, int sid) throws StorageException;
 }
