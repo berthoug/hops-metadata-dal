@@ -83,4 +83,45 @@ public class ContainersLogs implements Comparable<ContainersLogs> {
     return containerId.compareTo(other.getContainerid());
 
   }
+  
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash
+            = 31 * hash +
+            (this.containerId != null ? this.containerId.hashCode() : 0);
+    hash = 31 * hash + (int) (this.start ^ (this.start >>> 32));
+    hash = 31 * hash + (int) (this.stop ^ (this.stop >>> 32));
+    hash = 31 * hash + this.exitStatus;
+    hash = 31 * hash + Float.floatToIntBits(this.price);
+    return hash;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    final ContainersLogs other = (ContainersLogs) obj;
+    if ((this.containerId == null) ? (other.containerId != null)
+            : !this.containerId.equals(other.containerId)) {
+      return false;
+    }
+    if (this.start != other.start) {
+      return false;
+    }
+    if (this.stop != other.stop) {
+      return false;
+    }
+    if (this.exitStatus != other.exitStatus) {
+      return false;
+    }
+    if (Float.floatToIntBits(this.price) != Float.floatToIntBits(other.price)) {
+      return false;
+    }
+    return true;
+  }
 }

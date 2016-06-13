@@ -560,6 +560,7 @@ public class TablesDef {
     public static final String TIMELIMIT = "timelimit";
     public static final String BUDGETLIMIT = "budgetlimit";
     public static final String PRICELIMIT = "pricelimit";
+    public static final String PRICETYPE = "pricetype";
   }
   
   public static interface UpdatedNodeTableDef {

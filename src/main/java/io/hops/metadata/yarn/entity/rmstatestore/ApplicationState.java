@@ -25,17 +25,18 @@ public class ApplicationState {
   private final Long timeLimit;
   private final Float budgetLimit;
   private final Float priceLimit;
+  private final String priceType;
 
   public ApplicationState(String applicationid) {
-    this(applicationid, null, null, null, null, 0l, 0.0f, 0.0f);
+    this(applicationid, null, null, null, null, 0l, 0.0f, 0.0f,"");
   }
 
   public ApplicationState(String applicationid, byte[] appstate, String user, String name, String state) {
-    this(applicationid, appstate, user, name, state, 0l, 0.0f, 0.0f);
+    this(applicationid, appstate, user, name, state, 0l, 0.0f, 0.0f,"");
   }
 
   public ApplicationState(String applicationId, byte[] appstate, String user,
-          String name, String state, Long timeLimit, Float budgetLimit, Float priceLimit) {
+          String name, String state, Long timeLimit, Float budgetLimit, Float priceLimit, String priceType) {
     this.applicationId = applicationId;
     this.appstate = appstate;
     this.name = name;
@@ -44,6 +45,7 @@ public class ApplicationState {
     this.timeLimit = timeLimit;
     this.budgetLimit = budgetLimit;
     this.priceLimit = priceLimit;
+    this.priceType = priceType;
   }
 
   public String getApplicationid() {
@@ -80,6 +82,10 @@ public class ApplicationState {
 
   public Float getPriceLimit() {
     return priceLimit;
+  }
+  
+  public String getPriceType() {
+    return priceType;
   }
 
   @Override
