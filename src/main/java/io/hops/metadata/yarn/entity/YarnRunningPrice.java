@@ -22,7 +22,9 @@ public class YarnRunningPrice {
   private final float price;
 
   public enum PriceType{
-    VARIABLE;
+    VARIABLE,
+    FIXED_HIGN,
+    FIXED_LOW;
   }
   public YarnRunningPrice(PriceType type, long time, float price) {
     this.type = type;
