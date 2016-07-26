@@ -19,7 +19,7 @@ public class ContainersLogs {
 
   private final String containerId;
   private final long start;
-  private Long stop;
+  private long stop;
   private int exitStatus;
   private float price;
 
@@ -110,7 +110,7 @@ public class ContainersLogs {
     if (this.exitStatus != other.exitStatus) {
       return false;
     }
-    if (Float.floatToIntBits(this.price) != Float.floatToIntBits(other.price)) {
+    if (this.price != other.price) {
       return false;
     }
     return true;

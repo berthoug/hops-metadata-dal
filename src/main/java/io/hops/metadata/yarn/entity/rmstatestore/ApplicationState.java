@@ -31,12 +31,14 @@ public class ApplicationState {
     this(applicationid, null, null, null, null, 0l, 0.0f, 0.0f,"");
   }
 
-  public ApplicationState(String applicationid, byte[] appstate, String user, String name, String state) {
-    this(applicationid, appstate, user, name, state, 0l, 0.0f, 0.0f,"");
+  public ApplicationState(String applicationid, byte[] appstate, String user,
+          String name, String state) {
+    this(applicationid, appstate, user, name, state, 0l, 0.0f, 0.0f, "");
   }
 
   public ApplicationState(String applicationId, byte[] appstate, String user,
-          String name, String state, Long timeLimit, Float budgetLimit, Float priceLimit, String priceType) {
+          String name, String state, Long timeLimit, Float budgetLimit,
+          Float priceLimit, String priceType) {
     this.applicationId = applicationId;
     this.appstate = appstate;
     this.name = name;

@@ -43,8 +43,7 @@ public class RMNodeComps {
           List<UpdatedContainerInfo> hopUpdatedContainerInfo,
           List<ContainerId> hopContainerIdsToClean,
           List<FinishedApplications> hopFinishedApplications,
-          List<ContainerStatus> hopContainersStatus, 
-          String rmNodeId,
+          List<ContainerStatus> hopContainersStatus, String rmNodeId,
           List<String> hopApplicationsToKillList) {
     this.hopRMNode = hopRMNode;
     this.hopNextHeartbeat = hopNextHeartbeat;
@@ -67,11 +66,12 @@ public class RMNodeComps {
           List<UpdatedContainerInfo> hopUpdatedContainerInfo,
           List<ContainerId> hopContainerIdsToClean,
           List<FinishedApplications> hopFinishedApplications,
-          List<ContainerStatus> hopContainersStatus, 
+          List<ContainerStatus> hopContainersStatus,
           String rmNodeId) {
     this(hopRMNode, hopNextHeartbeat, hopNode, hopNodeHBResponse, hopResource,
             hopPendingEvent, hopUpdatedContainerInfo,
-            hopContainerIdsToClean, hopFinishedApplications, hopContainersStatus,rmNodeId,null);
+            hopContainerIdsToClean, hopFinishedApplications, hopContainersStatus,
+            rmNodeId, null);
   }
   
   public PendingEvent getPendingEvent() {
