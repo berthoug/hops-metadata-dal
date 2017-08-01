@@ -62,7 +62,7 @@ public class TablesDef {
 
   public static interface FinishedApplicationsTableDef {
 
-    public static final String TABLE_NAME = "yarn_rmnode_finishedapplications";
+    public static final String TABLE_NAME = "yarn_rmnode_applications";
     public static final String RMNODEID = "rmnodeid";
     public static final String APPLICATIONID = "applicationid";
     public static final String STATUS = "status";
