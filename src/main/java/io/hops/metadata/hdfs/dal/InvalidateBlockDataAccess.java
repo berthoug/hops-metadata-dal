@@ -29,7 +29,7 @@ public interface InvalidateBlockDataAccess<T> extends EntityDataAccess {
   List<T> findInvalidatedBlockByStorageId(int storageId)
       throws StorageException;
 
-  Map<Long,Long> findInvalidatedBlockByStorageIdUsingMySQLServer(int storageId)
+  Map<Long,Long> findInvalidatedBlockBySidUsingMySQLServer(int sid)
       throws StorageException;
 
   List<T> findInvalidatedBlocksByBlockId(long bid, int inodeId) throws StorageException;
@@ -48,7 +48,7 @@ public interface InvalidateBlockDataAccess<T> extends EntityDataAccess {
 
   void removeAll() throws StorageException;
 
-  void removeAllBySid(int sid) throws StorageException;
+  void removeAllByStorageId(int sid) throws StorageException;
 
-  void removeByBlockIdAndSid(long blockId, int sid) throws StorageException;
+  void removeByBlockIdAndStorageId(long blockId, int sid) throws StorageException;
 }
