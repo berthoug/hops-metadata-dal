@@ -21,7 +21,7 @@ public class ReplicaUnderConstruction extends ReplicaBase {
   private int bucketId;
 
   public ReplicaUnderConstruction(int state, int storageId, long blockId,
-      int inodeId, int bucketId) {
+                                  int inodeId, int bucketId) {
     super(storageId, blockId, inodeId);
     this.state = state;
     this.bucketId = bucketId;
@@ -34,11 +34,11 @@ public class ReplicaUnderConstruction extends ReplicaBase {
   public void setState(int state) {
     this.state = state;
   }
-  
+
   public int getBucketId() {
     return bucketId;
   }
-  
+
   public void setBucketId(int bucketId) {
     this.bucketId = bucketId;
   }
