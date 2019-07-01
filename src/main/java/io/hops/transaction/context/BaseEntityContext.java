@@ -113,7 +113,8 @@ abstract class BaseEntityContext<Key, Entity> extends EntityContext<Entity> {
   public void remove(Entity entity) throws TransactionContextException {
     Key entityKey = getKey(entity);
     ContextEntity contextEntity = contextEntities.get(entityKey);
-    if (contextEntity != null && contextEntity.getEntity() != null) {
+    if (contextEntity != null && contextEntity.getEntity() != null &&
+        (contextEntity.getState().equals(State.DBREAD) || contextEntity.getState().equals(State.MODIFIED))) {
       contextEntity.update(entity, State.REMOVED);
     } else {
       throw new TransactionContextException(
